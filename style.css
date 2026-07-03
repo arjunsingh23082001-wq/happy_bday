@@ -1022,3 +1022,36 @@ button{
     font-size:16px;
 }
 }
+
+@media (max-width:768px){
+
+    .screen{
+        justify-content:flex-start;
+        padding:20px 12px;
+    }
+
+    .gallery{
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+        width:100%;
+    }
+
+    .photoCard{
+        width:100%;
+    }
+
+    .photoCard img{
+        width:100%;
+        height:auto;
+        display:block;
+    }
+
+    .gift-wrapper,
+    .gameCard,
+    .letterCard,
+    .finalCard{
+        width:100%;
+        max-width:100%;
+    }
+}
