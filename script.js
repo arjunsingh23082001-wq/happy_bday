@@ -120,7 +120,7 @@ function spawnHeart(){
 
 }
 
-setInterval(spawnHeart,400);
+//setInterval(spawnHeart,400);
 
 
 // ---------- HEART BURST ----------
@@ -435,7 +435,7 @@ function celebrateWin() {
 
     }
 
-    createBurstHearts();
+    //createBurstHearts();
 
     setTimeout(() => {
 
@@ -595,7 +595,7 @@ function floatingCelebration() {
 
     }
 
-    createBurstHearts();
+    //createBurstHearts();
 
     for (let i = 0; i < 50; i++) {
 
@@ -629,13 +629,13 @@ if (replayButton) {
    AUTO FLOATING HEARTS
 ------------------------- */
 
-setInterval(() => {
+/*setInterval(() => {
 
     if (document.hidden) return;
 
     spawnHeart();
 
-}, 800);
+}, 800);*/
 
 /* -------------------------
    EXTRA SPARKLES
