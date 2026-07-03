@@ -696,36 +696,37 @@ font-size:17px;
 =========================== */
 
 .gallery{
+    width:min(1100px,92%);
+    margin:50px auto;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+    gap:24px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 }
 
 .photo-card{
     background:#fff;
-    border-radius:22px;
+    border-radius:24px;
     overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-    transition:.35s;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+    transition:.3s;
 }
 
 .photo-card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-8px);
 }
 
 .photo-card img{
     width:100%;
-    height:250px;
+    aspect-ratio:4/5;
     object-fit:cover;
     display:block;
-    border-radius:20px;
 }
 
 .photo-card p{
-    padding:18px;
-    font-size:18px;
-    color:#444;
+    padding:16px;
     text-align:center;
+    font-size:18px;
+    color:#555;
 }
 /* ===========================
   LETTER
@@ -981,9 +982,9 @@ body{
 }
 
 .container{
-    width:92%;
-    padding:20px;
+    width:min(900px,92%);
     margin:auto;
+    padding:30px;
 }
 
 h1{
@@ -1013,13 +1014,46 @@ h1{
 }
 
 button{
-    width:90%;
-    max-width:320px;
+    width:min(320px,90%);
+    padding:18px;
+    font-size:20px;
+    border-radius:50px;
+}
+.message-box{
+    width:min(850px,92%);
+    margin:40px auto;
+    padding:30px;
+    border-radius:30px;
+}
+@media (max-width:768px){
+
+body{
+    overflow-x:hidden;
+}
+
+h1{
+    font-size:3rem;
+    line-height:1.2;
+}
+
+.subtitle{
+    font-size:18px;
+}
+
+.gallery{
+    grid-template-columns:1fr;
 }
 
 .message-box{
-    width:92%;
-    padding:20px;
+    padding:24px;
+}
+
+button{
+    width:100%;
+}
+
+.photo-card p{
+    font-size:16px;
 }
 
 }
