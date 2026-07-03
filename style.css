@@ -257,7 +257,10 @@ transform:scale(1);
 =========================== */
 
 .gift-wrapper{
-
+   
+position:relative;
+overflow:hidden;
+   
 width:100%;
 
 max-width:700px;
@@ -312,6 +315,7 @@ font-size:20px;
 
 .giftBox{
 
+   
 font-size:120px;
 
 cursor:pointer;
@@ -612,6 +616,8 @@ font-size:17px;
 =========================== */
 
 .gameCard{
+   position:relative;
+   overflow:hidden;
    width:100%;
    max-width:850px;
    padding:40px;
@@ -696,43 +702,49 @@ font-size:17px;
 =========================== */
 
 .gallery{
-    width:min(1100px,92%);
-    margin:50px auto;
-    display:grid;
-    gap:24px;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-}
-
-.photo-card{
-    background:#fff;
-    border-radius:24px;
-    overflow:hidden;
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
-    transition:.3s;
-}
-
-.photo-card:hover{
-    transform:translateY(-8px);
-}
-
-.photo-card img{
     width:100%;
-    aspect-ratio:4/5;
-    object-fit:cover;
-    display:block;
+    max-width:1100px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
 }
 
-.photo-card p{
-    padding:16px;
-    text-align:center;
-    font-size:18px;
-    color:#555;
+.photoCard{
+    background:#fff;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+}
+
+.photoCard img{
+    width:100%;
+    height:350px;
+    display:block;
+    object-fit:cover;
+}
+
+@media (max-width:768px){
+
+.gallery{
+    grid-template-columns:1fr;
+    width:100%;
+    padding:0 15px;
+}
+
+.photoCard img{
+    height:auto;
+    aspect-ratio:4/5;
+}
+
 }
 /* ===========================
   LETTER
 =========================== */
 
 .letterCard{
+   position:relative;
+   overflow:hidden;
    width:100%;
    max-width:900px;
    max-height:80vh;
@@ -773,6 +785,8 @@ font-size:17px;
 
 .finalCard{
    width:100%;
+   position:relative;
+   overflow:hidden;
    max-width:850px;
    text-align:center;
    padding:50px;
@@ -975,56 +989,6 @@ font-size:17px;
 
 /* ---------- MOBILE ---------- */
 
-@media screen and (max-width:768px){
-
-body{
-    overflow-x:hidden;
-}
-
-.container{
-    width:min(900px,92%);
-    margin:auto;
-    padding:30px;
-}
-
-h1{
-    font-size:48px;
-}
-
-.subtitle{
-    font-size:20px;
-}
-
-.gallery{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-    width:100%;
-}
-
-.photo-card{
-    width:100%;
-    margin:auto;
-}
-
-.photo-card img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-}
-
-button{
-    width:min(320px,90%);
-    padding:18px;
-    font-size:20px;
-    border-radius:50px;
-}
-.message-box{
-    width:min(850px,92%);
-    margin:40px auto;
-    padding:30px;
-    border-radius:30px;
-}
 @media (max-width:768px){
 
 body{
@@ -1052,7 +1016,7 @@ button{
     width:100%;
 }
 
-.photo-card p{
+.photoCard p{
     font-size:16px;
 }
 }
