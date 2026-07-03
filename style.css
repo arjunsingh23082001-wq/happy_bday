@@ -1,0 +1,979 @@
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff9ec4,#ffb6d5,#ffd6e8,#f7c5ff);
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    color:#ffffff;
+    min-height:100vh;
+}
+
+/* Animated Background */
+
+@keyframes bgMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* ===========================
+   SCREENS
+=========================== */
+
+.screen{
+
+position:absolute;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+display:none;
+
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+padding:30px;
+
+}
+
+.screen.active{
+
+display:flex;
+
+}
+
+/* ===========================
+   HEARTS
+=========================== */
+
+#hearts-container{
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:1;
+
+}
+
+.heart{
+
+position:absolute;
+
+font-size:25px;
+
+animation:floatHeart linear infinite;
+
+opacity:.8;
+
+}
+
+@keyframes floatHeart{
+
+0%{
+
+transform:translateY(100vh) scale(.6);
+
+opacity:0;
+
+}
+
+25%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) scale(1.3);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+   SPARKLES
+=========================== */
+
+#sparkle-container{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+z-index:2;
+
+}
+
+.sparkle{
+
+position:absolute;
+
+width:5px;
+height:5px;
+
+background:#fff;
+
+border-radius:50%;
+
+animation:sparkle 2s linear infinite;
+
+}
+
+@keyframes sparkle{
+
+0%{
+
+opacity:0;
+
+transform:scale(.3);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.2);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:scale(.3);
+
+}
+
+}
+
+/* ===========================
+   LOADING SCREEN
+=========================== */
+
+.loader{
+
+text-align:center;
+
+z-index:5;
+
+}
+
+.loading-title{
+
+font-family:'Great Vibes',cursive;
+
+font-size:70px;
+
+margin-bottom:30px;
+
+}
+
+.loader p{
+
+font-size:20px;
+
+margin-top:20px;
+
+}
+
+.heart-loader{
+
+font-size:70px;
+
+animation:pulse 1.3s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.3);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* ===========================
+   GIFT SCREEN
+=========================== */
+
+.gift-wrapper{
+
+width:100%;
+
+max-width:700px;
+
+padding:45px;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+text-align:center;
+
+z-index:10;
+
+}
+
+.mainHeading{
+
+font-size:55px;
+
+font-family:'Great Vibes',cursive;
+
+line-height:1.4;
+
+}
+
+.mainHeading span{
+
+display:block;
+
+font-size:65px;
+
+margin-top:10px;
+
+}
+
+.subtitle{
+
+margin:25px 0;
+
+font-size:20px;
+
+}
+
+/* ===========================
+   GIFT BOX
+=========================== */
+
+.giftBox{
+
+font-size:120px;
+
+cursor:pointer;
+
+margin:35px auto;
+
+transition:.4s;
+
+animation:giftBounce 2s infinite;
+
+}
+
+.giftBox:hover{
+
+transform:scale(1.15) rotate(-6deg);
+
+}
+
+@keyframes giftBounce{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+button{
+
+border:none;
+
+outline:none;
+
+cursor:pointer;
+
+padding:16px 36px;
+
+margin:12px;
+
+font-size:18px;
+
+border-radius:50px;
+
+font-weight:600;
+
+transition:.35s;
+
+color:#ff2b7a;
+
+background:#ffffff;
+
+box-shadow:0 12px 30px rgba(0,0,0,.2);
+
+}
+
+button:hover{
+
+transform:translateY(-4px) scale(1.05);
+
+background:#ffe6f1;
+
+}
+
+button:active{
+
+transform:scale(.95);
+
+}
+
+#playMusic{
+
+display:inline-block;
+
+}
+
+#openGift{
+
+display:inline-block;
+
+}
+
+/* ===========================
+   BALLOONS
+=========================== */
+
+#balloonContainer{
+
+position:fixed;
+
+left:0;
+bottom:-250px;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:3;
+
+}
+
+.balloon{
+
+position:absolute;
+
+bottom:-180px;
+
+width:70px;
+
+height:90px;
+
+border-radius:50%;
+
+animation:rise 12s linear infinite;
+
+}
+
+.balloon::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:90px;
+
+width:2px;
+
+height:120px;
+
+background:white;
+
+transform:translateX(-50%);
+
+}
+
+.red{
+
+left:8%;
+
+background:#ff4b6e;
+
+animation-delay:0s;
+
+}
+
+.blue{
+
+left:24%;
+
+background:#5ca8ff;
+
+animation-delay:2s;
+
+}
+
+.yellow{
+
+left:42%;
+
+background:#ffd84c;
+
+animation-delay:4s;
+
+}
+
+.pink{
+
+left:58%;
+
+background:#ff7ac8;
+
+animation-delay:1s;
+
+}
+
+.purple{
+
+left:74%;
+
+background:#bf6dff;
+
+animation-delay:5s;
+
+}
+
+.green{
+
+left:90%;
+
+background:#4cd964;
+
+animation-delay:3s;
+
+}
+
+@keyframes rise{
+
+0%{
+
+transform:translateY(0);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-130vh);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.loading-title{
+
+font-size:48px;
+
+}
+
+.mainHeading{
+
+font-size:42px;
+
+}
+
+.mainHeading span{
+
+font-size:50px;
+
+}
+
+.gift-wrapper{
+
+padding:28px;
+
+width:92%;
+
+}
+
+.giftBox{
+
+font-size:90px;
+
+}
+
+button{
+
+width:90%;
+
+font-size:17px;
+
+}
+
+.subtitle{
+
+font-size:17px;
+
+}
+
+}
+/* ===========================
+   GAME SCREEN
+=========================== */
+
+.gameCard{
+   width:100%;
+   max-width:850px;
+   padding:40px;
+   text-align:center;
+   background:rgba(255,255,255,.18);
+   backdrop-filter:blur(20px);
+   border-radius:30px;
+   box-shadow:0 20px 50px rgba(0,0,0,.25);
+   z-index:10;
+}
+
+.gameCard h1{
+   font-size:42px;
+   margin-bottom:10px;
+}
+
+.gameCard p{
+   font-size:18px;
+   margin-bottom:25px;
+}
+
+.progress{
+   width:100%;
+   height:16px;
+   background:rgba(255,255,255,.35);
+   border-radius:20px;
+   overflow:hidden;
+   margin:20px 0;
+}
+
+#progressFill{
+   width:0%;
+   height:100%;
+   background:linear-gradient(90deg,#ff2d75,#ffb347);
+   transition:.3s;
+}
+
+.gameStats{
+   display:flex;
+   justify-content:space-between;
+   margin:25px 0;
+   font-size:20px;
+   font-weight:600;
+}
+
+#gameArea{
+   width:100%;
+   height:420px;
+   margin-top:20px;
+   border-radius:20px;
+   position:relative;
+   overflow:hidden;
+   background:rgba(255,255,255,.15);
+}
+
+.gameHeart{
+   position:absolute;
+   font-size:40px;
+   cursor:pointer;
+   user-select:none;
+   animation:pop .25s ease;
+   transition:.2s;
+}
+
+.gameHeart:hover{
+   transform:scale(1.25);
+}
+
+@keyframes pop{
+   from{
+       transform:scale(.2);
+       opacity:0;
+   }
+   to{
+       transform:scale(1);
+       opacity:1;
+   }
+}
+
+/* ===========================
+  GALLERY
+=========================== */
+
+.galleryHeading{
+   font-family:'Great Vibes',cursive;
+   font-size:60px;
+   margin-bottom:20px;
+}
+
+.gallery{
+   width:100%;
+   max-width:1100px;
+   display:grid;
+   grid-template-columns:repeat(2,1fr);
+   gap:30px;
+   margin-top:35px;
+}
+
+.photoCard{
+   background:white;
+   padding:15px;
+   border-radius:25px;
+   transform:rotate(-2deg);
+   transition:.45s;
+   box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.photoCard:nth-child(even){
+   transform:rotate(2deg);
+}
+
+.photoCard:hover{
+   transform:scale(1.05) rotate(0deg);
+}
+
+.photoCard img{
+   width:100%;
+   display:block;
+   border-radius:18px;
+}
+
+/* ===========================
+  LETTER
+=========================== */
+
+.letterCard{
+   width:100%;
+   max-width:900px;
+   max-height:80vh;
+   overflow-y:auto;
+   background:rgba(255,255,255,.18);
+   backdrop-filter:blur(20px);
+   border-radius:30px;
+   padding:45px;
+   box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.letterCard h1{
+   text-align:center;
+   font-family:'Great Vibes',cursive;
+   font-size:60px;
+   margin-bottom:25px;
+}
+
+#typingText{
+   line-height:2;
+   font-size:19px;
+}
+
+#typingText p{
+   margin-bottom:22px;
+}
+
+.highlightText{
+   text-align:center;
+   color:#fff6a9;
+   margin:40px 0;
+   font-size:34px;
+}
+
+/* ===========================
+  FINAL SCREEN
+=========================== */
+
+.finalCard{
+   width:100%;
+   max-width:850px;
+   text-align:center;
+   padding:50px;
+   background:rgba(255,255,255,.18);
+   backdrop-filter:blur(20px);
+   border-radius:30px;
+   box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.finalCard h1{
+   font-size:58px;
+   font-family:'Great Vibes',cursive;
+}
+
+.finalCard h2{
+   margin:25px 0;
+   font-size:42px;
+}
+
+.finalCard h3{
+   margin-top:40px;
+   font-size:30px;
+}
+
+.finalCard p{
+   margin-top:20px;
+   font-size:22px;
+   line-height:1.8;
+}
+
+/* ===========================
+  CONFETTI
+=========================== */
+
+#confettiCanvas{
+   position:fixed;
+   top:0;
+   left:0;
+   width:100%;
+   height:100%;
+   pointer-events:none;
+   z-index:999;
+}
+
+/* ===========================
+  GLASS SHINE
+=========================== */
+
+.gift-wrapper::before,
+.gameCard::before,
+.letterCard::before,
+.finalCard::before{
+   content:"";
+   position:absolute;
+   top:-120%;
+   left:-50%;
+   width:60%;
+   height:250%;
+   background:rgba(255,255,255,.18);
+   transform:rotate(25deg);
+   transition:1s;
+}
+
+.gift-wrapper:hover::before,
+.gameCard:hover::before,
+.letterCard:hover::before,
+.finalCard:hover::before{
+   left:120%;
+}
+
+/* ===========================
+  SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+   width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+   background:#ff77b4;
+   border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+   background:rgba(255,255,255,.15);
+}
+
+/* ===========================
+  MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.gameCard{
+   padding:25px;
+}
+
+.gameCard h1{
+   font-size:32px;
+}
+
+.gameStats{
+   flex-direction:column;
+   gap:15px;
+}
+
+#gameArea{
+   height:300px;
+}
+
+.gallery{
+   grid-template-columns:1fr;
+}
+
+.galleryHeading{
+   font-size:42px;
+}
+
+.letterCard{
+   padding:25px;
+   max-height:88vh;
+}
+
+.letterCard h1{
+   font-size:42px;
+}
+
+#typingText{
+   font-size:17px;
+}
+
+.highlightText{
+   font-size:24px;
+}
+
+.finalCard{
+   padding:30px;
+}
+
+.finalCard h1{
+   font-size:42px;
+}
+
+.finalCard h2{
+   font-size:32px;
+}
+
+.finalCard p{
+   font-size:18px;
+}
+
+}
+
+/* ===========================
+  FADE ANIMATIONS
+=========================== */
+
+.fadeIn{
+   animation:fadeIn .8s ease forwards;
+}
+
+.fadeOut{
+   animation:fadeOut .6s ease forwards;
+}
+
+@keyframes fadeIn{
+   from{
+       opacity:0;
+       transform:translateY(30px);
+   }
+   to{
+       opacity:1;
+       transform:translateY(0);
+   }
+}
+
+@keyframes fadeOut{
+   from{
+       opacity:1;
+   }
+   to{
+       opacity:0;
+   }
+}
+
+.scaleIn{
+   animation:scaleIn .5s ease;
+}
+
+@keyframes scaleIn{
+   from{
+       transform:scale(.7);
+       opacity:0;
+   }
+   to{
+       transform:scale(1);
+       opacity:1;
+   }
+}
