@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bibi Ji ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Floating Background -->
+
+    <div id="hearts-container"></div>
+    <div id="sparkle-container"></div>
+
+    <!-- Background Music -->
+
+    <audio id="bgMusic" loop>
+        <source src="assets/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Loading Screen -->
+
+    <section id="loadingScreen" class="screen active">
+
+        <div class="loader">
+
+            <h1 class="loading-title">
+                Loading Your Surprise...
+            </h1>
+
+            <div class="heart-loader">
+                ❤️
+            </div>
+
+            <p>
+                Just a few more seconds...
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Gift Screen -->
+
+    <section id="giftScreen" class="screen">
+
+        <div class="gift-wrapper">
+
+            <h1 class="mainHeading">
+
+                Happy Birthday
+
+                <span>
+
+                    Manni ❤️
+
+                </span>
+
+            </h1>
+
+            <p class="subtitle">
+
+                Beta Ji made something special for you...
+
+            </p>
+
+            <div class="giftBox" id="giftBox">
+
+                🎁
+
+            </div>
+
+            <button id="playMusic">
+
+                🎵 Play Music
+
+            </button>
+
+            <button id="openGift">
+
+                ❤️ Open Your Surprise
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Balloon Layer -->
+
+    <div id="balloonContainer">
+
+        <div class="balloon red"></div>
+        <div class="balloon blue"></div>
+        <div class="balloon yellow"></div>
+        <div class="balloon pink"></div>
+        <div class="balloon purple"></div>
+        <div class="balloon green"></div>
+
+    </div>
+
+    <!-- Game Screen -->
+
+    <section id="gameScreen" class="screen">
+
+        <div class="gameCard">
+
+            <h1>
+
+                Catch The Cats 🐱
+
+            </h1>
+
+            <p>
+
+                Catch 5 Cats in 10 Seconds 🐱
+
+            </p>
+
+            <div class="progress">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+            <div class="gameStats">
+
+                <div>
+                    🐱 Cats :
+                    <span id="score">0</span>
+                    /5
+
+                </div>
+
+                <div>
+
+                    ⏰
+
+                    <span id="timer">
+
+                        10
+
+                    </span>
+
+                    Seconds
+
+                </div>
+
+            </div>
+
+            <button id="startGame">
+
+                Start Game
+
+            </button>
+
+            <div id="gameArea">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Confetti -->
+
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Memory Gallery -->
+
+    <section id="galleryScreen" class="screen">
+
+        <h1 class="galleryHeading">
+
+            Our Beautiful Memories 📸
+
+        </h1>
+
+        <p>
+
+            Every picture reminds me how lucky I am to know you.
+
+        </p>
+
+        <div class="gallery">
+
+            <div class="photoCard">
+
+                <img src="photos/photo1.jpg">
+
+            </div>
+
+            <div class="photoCard">
+
+                <img src="photos/photo2.jpg">
+
+            </div>
+
+            <div class="photoCard">
+
+                <img src="photos/photo3.jpg">
+
+            </div>
+
+            <div class="photoCard">
+
+                <img src="photos/photo4.jpg">
+
+            </div>
+
+        </div>
+
+        <button id="nextLetter">
+
+            Continue ❤️
+
+        </button>
+
+    </section>
+
+    <!-- Letter Screen -->
+
+    <section id="letterScreen" class="screen">
+
+        <div class="letterCard">
+
+            <h1>
+
+                Happy Birthday
+                Bibi Ji ❤️
+
+            </h1>
+
+            <div id="typingText">
+                <p>
+                    Dear <strong>Manni (Bibi Ji)</strong>,
+                </p>
+
+                <p>
+                    Happy Birthday to one of the most amazing people I've ever met. ❤️
+                </p>
+
+                <p>
+                    Today is all about celebrating YOU — your smile, your kindness,
+                    your strength and every little thing that makes you so special.
+                </p>
+
+                <p>
+                    I wanted to make something different this year...
+                    not just a birthday wish,
+                    but a small journey filled with our memories.
+                </p>
+
+                <p>
+                    Every picture reminds me of a beautiful moment.
+                    Every conversation with you becomes a memory I treasure.
+                </p>
+
+                <p>
+                    No matter where life takes us,
+                    I hope your smile always stays the same.
+                </p>
+
+                <p>
+                    And I just want you to remember one thing...
+                </p>
+
+                <h2 class="highlightText">
+
+                    Whenever you need someone,
+
+                    <br><br>
+
+                    Beta Ji will always be there for you. ❤️
+
+                </h2>
+
+                <p>
+                    I hope this birthday brings endless happiness,
+                    lots of laughter,
+                    beautiful memories
+                    and everything your heart wishes for.
+                </p>
+
+                <p>
+
+                    Keep smiling...
+
+                    <br>
+
+                    Keep shining...
+
+                    <br>
+
+                    Keep being YOU.
+
+                </p>
+
+                <p>
+
+                    Happy Birthday once again,
+                    Bibi Ji. 🌸
+
+                </p>
+
+            </div>
+
+            <button id="finishBtn">
+
+                See Final Surprise 🎈
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Final Screen -->
+
+    <section id="finalScreen" class="screen">
+
+        <div class="finalCard">
+
+            <h1>
+
+                🎂 Happy Birthday 🎂
+
+            </h1>
+
+            <h2>
+
+                Manni (Bibi Ji) ❤️
+
+            </h2>
+
+            <p>
+
+                Thank you for being
+                such a beautiful part of my life.
+
+            </p>
+
+            <p>
+
+                May your smile always stay this beautiful,
+                and may every year bring you even more happiness.
+
+            </p>
+
+            <h3>
+
+                🌸
+                From Beta Ji
+                🌸
+
+            </h3>
+
+            <button onclick="location.reload()">
+
+                Replay Surprise ❤️
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Scripts -->
+
+    <script src="confetti.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
